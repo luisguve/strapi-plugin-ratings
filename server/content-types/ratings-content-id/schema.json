@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "r_content_ids",
+  "info": {
+    "singularName": "r-content-id",
+    "pluralName": "r-content-ids",
+    "displayName": "RContentID"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::ratings.review",
+      "mappedBy": "related_to",
+      "configurable": false
+    },
+    "average": {
+      "type": "decimal",
+      "configurable": false
+    },
+    "slug": {
+      "type": "string",
+      "configurable": false
+    }
+  }
+}

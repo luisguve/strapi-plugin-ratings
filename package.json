@@ -1,0 +1,44 @@
+{
+  "name": "strapi-plugin-ratings",
+  "version": "1.0.0",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "ratings",
+    "reviews",
+    "api",
+    "backend"
+  ],
+  "description": "Strapi plugin to enable and manage reviews for your content",
+  "strapi": {
+    "displayName": "Ratings",
+    "name": "ratings",
+    "description": "Enable and manage reviews for your content",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@strapi/helper-plugin": "^4.0.0",
+    "date-fns": "^2.28.0",
+    "immer": "^9.0.6",
+    "qs": "^6.10.1",
+    "react-awesome-stars-rating": "^0.6.0",
+    "react-select": "^4.0.2"
+  },
+  "author": {
+    "name": "Luis G. Villegas",
+    "email": "luisguveal@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "Luis G. Villegas",
+      "email": "luisguveal@gmail.com"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x. <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/luisguve/strapi-plugin-ratings"
+}
