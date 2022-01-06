@@ -21,7 +21,7 @@ module.exports = {
     },
     {
       method: 'GET',
-      path: '/reviews/page-size',
+      path: '/page-size',
       handler: 'reviews.getPageSize',
       config: {
         policies: [],
@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       method: 'POST',
-      path: '/reviews/page-size',
+      path: '/page-size',
       handler: 'admin__reviews.setPageSize',
       config: {
         policies: [],
