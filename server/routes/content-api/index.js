@@ -5,7 +5,7 @@ module.exports = {
   routes: [
     {
       method: "GET",
-      path: "/reviews/page-size",
+      path: "/page-size",
       handler: "reviews.getPageSize",
       config: {
         policies: []
