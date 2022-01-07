@@ -1,4 +1,4 @@
-# Strapi plugin Comment Manager
+# Strapi plugin Ratings
 
 Enable and manage user reviews for your content very easily!
 
