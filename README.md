@@ -50,7 +50,7 @@ interface IReview {
 ### Authors:
 
 ```ts
-IAuthor {
+interface IAuthor {
   username: string,
   email: string,
   id: string
