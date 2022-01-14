@@ -5,11 +5,30 @@
   "info": {
     "singularName": "review",
     "pluralName": "reviews",
-    "displayName": "Review"
+    "displayName": "Review",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
     "comment": ""
   },
-  "attributes": {}
+  "attributes": {
+    "score": {
+      "type": "integer"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "related_to": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::ratings.r-content-id",
+      "inversedBy": "reviews"
+    }
+  }
 }
