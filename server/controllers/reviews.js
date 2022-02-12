@@ -138,6 +138,26 @@ module.exports = {
       count: reviewsCount
     }
   },
+  async getStats(ctx) {
+    const { slug } = ctx.params
+    const reviewsCount = await strapi.db.query("plugin::ratings.review").count({
+      where: {
+        related_to: { slug }
+      }
+    })
+    let averageScore = 0
+    const score = await strapi.db.query("plugin::ratings.r-content-id").findOne({
+      select: ["average"],
+      where: { slug }
+    })
+    if (score) {
+      averageScore = score.average
+    }
+    ctx.body = {
+      averageScore,
+      reviewsCount
+    }
+  },
   async getUserReview(ctx) {
     const { slug } = ctx.params
     const { user } = ctx.state

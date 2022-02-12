@@ -36,6 +36,14 @@ module.exports = {
       }
     },
     {
+      method: "GET",
+      path: "/reviews/:slug/stats",
+      handler: "reviews.getStats",
+      config: {
+        policies: []
+      }
+    },
+    {
       method: "POST",
       path: "/reviews/:slug",
       handler: "reviews.create",
