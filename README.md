@@ -180,7 +180,6 @@ Admin users are able to delete reviews from within the plugin page of the Strapi
 
 The plugin interface has two tabs: one for the latest reviews and one for reviews by content ID.
 
-## Roadmap and future plans
+## Submitting issues
 
-The plugin is pretty basic but it can be improved with more features and a better UI/UX. 
-Feedback and collaborations are very welcome.
+Issues are submitted to https://github.com/luisguve/strapi-plugin-ratings/issues. Please provide as much information as possible about the bug. If it is a feature request, I will be glad to hear from you.

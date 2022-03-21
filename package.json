@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-ratings",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "keywords": [
     "strapi",
     "strapi-plugin",
@@ -24,6 +24,9 @@
     "qs": "^6.10.1",
     "react-awesome-stars-rating": "^0.6.0",
     "react-select": "^4.0.2"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.0"
   },
   "author": {
     "name": "Luis G. Villegas",
