@@ -20,7 +20,7 @@ Then, rebuild the admin dashboard using the following command
 
 For your frontend to have access to the API, enable the following permissions for **Ratings** from **Users & Permissions Plugin** on your project settings:
 
-For public, enable: **count**, **find** and **getPageSize**.
+For public, enable: **count**, **find**, **getPageSize** and **getStats**.
 
 For authenticated, enable **create**, **find** and **getUserReview**.
 
@@ -29,7 +29,7 @@ For authenticated, enable **create**, **find** and **getUserReview**.
 Reviews can be displayed in the frontend in two ways:
 
 1. Using the React components library [strapi-ratings-client](https://npmjs.com/package/strapi-ratings-client) **(recommended)**
-2. Build your custom frontend using the API
+2. Build your custom frontend using the API endpoints, described as follows:
 
 ## API
 
@@ -39,7 +39,7 @@ There are some Typescript interfaces that will help to get an idea of the data s
 
 ```ts
 interface IReview {
-  id: string,
+  id: number,
   createdAt: string,
   comment: string | null,
   author: IAuthor | null,
@@ -53,7 +53,16 @@ interface IReview {
 interface IAuthor {
   username: string,
   email: string,
-  id: string
+  id: number
+}
+```
+
+### Content Stats
+
+```ts
+interface IStats {
+  averageScore: number;
+  reviewsCount: number | null;
 }
 ```
 
@@ -71,7 +80,9 @@ The following endpoints are exposed to fetch and post reviews:
 
 ```ts
 {
-  reviewsCount?: number,
+  reviewsCount: number,
+  averageScore: number,
+  userReview: IReview | null,
   reviews: IReview[]
 }
 ```
@@ -79,6 +90,23 @@ The following endpoints are exposed to fetch and post reviews:
 The parameter `start` indicates how many reviews to skip. This is for pagination purposes.
 
 The parameter `ignoreCount` indicates whether or not to return the total number of reviews associated with the given slug.
+
+---
+
+### Get review stats for a content ID
+
+**Method**: GET
+
+**Path**: /api/ratings/reviews/:slug/stats
+
+**Returns**:
+
+```ts
+{
+  averageScore: number,
+  reviewsCount: number | null
+}
+```
 
 ---
 
@@ -95,6 +123,8 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
   count: number
 }
 ```
+
+---
 
 ### Post a review
 
@@ -120,6 +150,8 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 }
 ```
 
+---
+
 ### Get the page size
 
 **Method**: GET
@@ -133,6 +165,8 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
   pageSize: number
 }
 ```
+
+---
 
 ## General settings
 
