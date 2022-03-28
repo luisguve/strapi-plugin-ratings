@@ -68,6 +68,14 @@ module.exports = {
       return ctx.badRequest("The user should be authenticated")
     }
     const { slug } = ctx.params
+
+    const userCanPostReview = await strapi.service("plugin::masterclass.review")
+      .userCanPostReview(user, slug)
+
+    if (!userCanPostReview) {
+      return ctx.forbidden("User cannot post a review on this content")
+    }
+
     const { comment, score } = ctx.request.body
     if (!score) {
       return ctx.badRequest("Score should be between 1-5", {slug, comment, score})

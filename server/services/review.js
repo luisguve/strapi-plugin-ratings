@@ -29,5 +29,8 @@ module.exports = createCoreService('plugin::ratings.review', ({strapi}) => ({
   setPageSize: async function(newPageSize) {
     const pluginStore = this.getStore()
     pluginStore.set({ key: "pageSize", value: newPageSize})
+  },
+  async userCanPostReview(user, slug) {
+    return true
   }
 }));
