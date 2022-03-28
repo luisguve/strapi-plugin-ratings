@@ -150,6 +150,25 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 }
 ```
 
+By default, every authenticated user can post reviews on any content.
+
+In order to customize this behavior, e.g. allowing or disallowing a user from posting reviews, you must **extend** the service `userCanPostReview` from whithin `register` function in ./src/index.js. For example:
+
+```js
+strapi.service("plugin::ratings.review").userCanPostReview = async (user, slug) => {
+  /*
+    Here you will check if the user purchased the
+    item with the given slug, for example,
+    then return eiter true or false.
+  */
+  return true
+}
+```
+
+Notice that `userCanPostReview` will receive two parameters: the `user` from `Users & Permissions Plugin`, containing it's id, username, confirmed, etc., and the `slug`, which is a string and refers to the content ID which the review is being posted on.
+
+In case this function returns `false`, the response of the endpoint will be 403 (forbidden) with the text `User cannot post a review on this content`.
+
 ---
 
 ### Get the page size
