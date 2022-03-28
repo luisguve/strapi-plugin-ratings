@@ -69,7 +69,7 @@ module.exports = {
     }
     const { slug } = ctx.params
 
-    const userCanPostReview = await strapi.service("plugin::masterclass.review")
+    const userCanPostReview = await strapi.service("plugin::ratings.review")
       .userCanPostReview(user, slug)
 
     if (!userCanPostReview) {
