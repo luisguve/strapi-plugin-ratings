@@ -157,9 +157,9 @@ In order to customize this behavior, e.g. allowing or disallowing a user from po
 ```js
 strapi.service("plugin::ratings.review").userCanPostReview = async (user, slug) => {
   /*
-    Here you will check if the user purchased the
-    item with the given slug, for example,
-    then return eiter true or false.
+    Here you will check whether or not the user
+    is allowed to post a review on this content ID
+    and return either true or false.
   */
   return true
 }
