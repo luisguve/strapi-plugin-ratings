@@ -1,6 +1,6 @@
 {
   "name": "@coolstrapiplugins/strapi-plugin-ratings",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "keywords": [
     "strapi",
     "strapi-plugin",
@@ -43,5 +43,6 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT",
-  "repository": "https://github.com/coolstrapiplugins/strapi-plugin-ratings"
+  "repository": "https://github.com/coolstrapiplugins/strapi-plugin-ratings",
+  "homepage": "https://coolstrapiplugins.github.io/plugins/strapi-plugin-comment-manager/"
 }
