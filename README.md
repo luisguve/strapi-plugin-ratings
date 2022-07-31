@@ -10,7 +10,7 @@ You should have installed an instance of Strapi v4.x.x
 
 Run the following command in your project root:
 
-    npm install @coolstrapiplugins/strapi-plugin-ratings
+    npm install strapi-plugin-ratings
 
 Then, rebuild the admin dashboard using the following command
 
@@ -28,7 +28,7 @@ For authenticated, enable **create**, **find** and **getUserReview**.
 
 Reviews can be displayed in the frontend in two ways:
 
-1. Using the React components library [strapi-ratings-client](https://npmjs.com/package/@coolstrapiplugins/strapi-ratings-client) **(recommended)**
+1. Using the React components library [strapi-ratings-client](https://npmjs.com/package/strapi-ratings-client) **(recommended)**
 2. Build your custom frontend using the API endpoints, described as follows:
 
 ## API
@@ -201,4 +201,4 @@ The plugin interface has two tabs: one for the latest reviews and one for review
 
 ## Submitting issues
 
-Issues are submitted to https://github.com/coolstrapiplugins/strapi-plugin-ratings/issues. Please provide as much information as possible about the bug or feature request.
+Issues are submitted to https://github.com/luisguve/strapi-plugin-ratings/issues. Please provide as much information as possible about the bug or feature request.
