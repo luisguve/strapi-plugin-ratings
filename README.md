@@ -10,11 +10,15 @@ You should have installed an instance of Strapi v4.x.x
 
 Run the following command in your project root:
 
-    npm install strapi-plugin-ratings
+```bash
+npm install strapi-plugin-ratings
+```
 
 Then, rebuild the admin dashboard using the following command
 
-    npm run build
+```bash
+npm run build
+```
 
 ## Configurarion
 
@@ -39,11 +43,11 @@ There are some Typescript interfaces that will help to get an idea of the data s
 
 ```ts
 interface IReview {
-  id: number,
-  createdAt: string,
-  comment: string | null,
-  author: IAuthor | null,
-  score: number,
+  id: number;
+  createdAt: string;
+  comment: string | null;
+  author: IAuthor | null;
+  score: number;
 }
 ```
 
@@ -51,9 +55,9 @@ interface IReview {
 
 ```ts
 interface IAuthor {
-  username: string,
-  email: string,
-  id: number
+  username: string;
+  email: string;
+  id: number;
 }
 ```
 
@@ -80,10 +84,10 @@ The following endpoints are exposed to fetch and post reviews:
 
 ```ts
 {
-  reviewsCount: number,
-  averageScore: number,
-  userReview: IReview | null,
-  reviews: IReview[]
+  reviewsCount: number;
+  averageScore: number;
+  userReview: IReview | null;
+  reviews: IReview[];
 }
 ```
 
@@ -103,8 +107,8 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 ```ts
 {
-  averageScore: number,
-  reviewsCount: number | null
+  averageScore: number;
+  reviewsCount: number | null;
 }
 ```
 
@@ -120,7 +124,7 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 ```ts
 {
-  count: number
+  count: number;
 }
 ```
 
@@ -138,7 +142,7 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 ```ts
 {
-  content: string
+  content: string;
 }
 ```
 
@@ -146,7 +150,7 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 ```ts
 {
-  id: number
+  id: number;
 }
 ```
 
@@ -181,7 +185,7 @@ In case this function returns `false`, the response of the endpoint will be 403 
 
 ```ts
 {
-  pageSize: number
+  pageSize: number;
 }
 ```
 
@@ -202,3 +206,7 @@ The plugin interface has two tabs: one for the latest reviews and one for review
 ## Submitting issues
 
 Issues are submitted to https://github.com/luisguve/strapi-plugin-ratings/issues. Please provide as much information as possible about the bug or feature request.
+
+## Tutorial
+
+For more detailed instructions on how to install, configure & use this plugin, check out [this post](https://luisguve.github.io/tutorials/how-to-enable-and-manage-use-reviews-in-your-strapi-application/)
