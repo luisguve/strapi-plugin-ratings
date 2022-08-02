@@ -49,7 +49,7 @@ const ReviewsContainer = ({data, actionDelete, actionAdd}) => {
       {
         (!data.reviews || !data.reviews.length) ?
           <Typography variant="beta">There are no reviews yet</Typography>
-        : (
+        : reviews && (
           <Stack size={2}>
             <Typography variant="beta">
               Viewing {data.reviews.length} of {data.reviewsCount} reviews

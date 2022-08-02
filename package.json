@@ -6,8 +6,7 @@
     "strapi-plugin",
     "ratings",
     "reviews",
-    "api",
-    "backend"
+    "api"
   ],
   "description": "Strapi plugin to enable and manage reviews for your content",
   "strapi": {

@@ -17,7 +17,7 @@ const HomePage = () => {
       <Box paddingBottom={3} paddingTop={3}>
         <Typography variant="alpha" fontWeight="bold">Content Ratings</Typography>
       </Box>
-      <TabGroup label="Some stuff for the label" id="tabs" onTabChange={selected => console.log(selected)}>
+      <TabGroup label="" id="tabs">
         <Tabs>
           <Tab>Latest reviews</Tab>
           <Tab>Reviews by content ID</Tab>
