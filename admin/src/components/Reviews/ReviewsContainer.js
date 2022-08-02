@@ -102,7 +102,7 @@ const ReviewModal = ({data, close, actionDelete}) => {
   const [deleteModal, setDeleteModal] = useState(false)
   const toggleDelModal = () => setDeleteModal(prev => !prev)
   const handleDelete = async () => {
-    const url = `ratings/reviews/${data.id}`
+    const url = `/ratings/reviews/${data.id}`
     setDeleting(true)
     try {
       const res = await axios.delete(url)
