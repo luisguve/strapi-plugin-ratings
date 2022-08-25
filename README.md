@@ -2,6 +2,8 @@
 
 Enable and manage user reviews for your content very easily!
 
+## [Video tutorial](https://youtu.be/Gjp5lv_T6C0)
+
 ## Requirements
 
 You should have installed an instance of Strapi v4.x.x
