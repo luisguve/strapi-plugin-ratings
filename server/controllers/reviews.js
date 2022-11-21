@@ -1,4 +1,6 @@
 'use strict';
+const utils = require("@strapi/utils");
+const { sanitize } = utils;
 
 /**
  *   controller
@@ -168,7 +170,7 @@ module.exports = {
   },
   async getUserReview(ctx) {
     const { slug } = ctx.params
-    const { user } = ctx.state
+    const { user, auth } = ctx.state
     if (!user) {
       return ctx.badRequest("User unauthenticated")
     }
@@ -179,11 +181,11 @@ module.exports = {
         author: user.id
       },
       populate: {
-        author: { fields: ["id", "username", "email"] }
+        author: { select: ["id", "username", "email"] }
       }
     })
     ctx.body = {
-      review
+      review: await sanitize.contentAPI.output(review, strapi.getModel('plugin::ratings.review'))
     }
   }
 }
